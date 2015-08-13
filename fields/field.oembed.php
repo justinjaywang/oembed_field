@@ -544,6 +544,11 @@
 		 */
 		public function displayPublishPanel(&$wrapper, $data=NULL, $flagWithError=NULL, $fieldnamePrefix=NULL, $fieldnamePostfix=NULL) {
 
+			// add stylesheet
+			if(Symphony::Engine() instanceof Administration) {
+				Administration::instance()->Page->addStylesheetToHead(URL . '/extensions/oembed_field/assets/publish.oembed.css', 'screen', 104, false);
+			}
+
 			$isRequired = $this->get('required') == 'yes';
 			$isUnique = $this->get('unique') == 'yes';
 			$isUniqueMedia = $this->get('unique_media') == 'yes';
@@ -571,7 +576,7 @@
 			$url->setAttribute('value', $value);
 
 			$drivers = new XMLElement('div',
-				__('Supported services: <i>%s</i>',
+				__('<i class="supported">Supported services: %s</i>',
 					array(str_replace(',', ', ', $this->get('driver')))
 				)
 			);

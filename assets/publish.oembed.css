@@ -1,0 +1,14 @@
+.field-oembed .frame {
+  margin-top: .1rem; /* match file upload frame */
+}
+
+.field-oembed .frame > div:first-child {
+  margin-bottom: 10px;
+}
+
+.field-oembed .supported {
+  margin-top: .75rem;
+  display: block;
+  /*color: rgba(0,0,0,0.4);*/
+  /*font-size: 90.91%*/
+}
